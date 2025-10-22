@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff8f3;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+.intro {
+  background: #ffd8b5;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.recipe-card {
+  perspective: 1000px;
+  width: 320px;
+  margin: 2rem auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.recipe-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: #fffbe7;
+  padding: 20px;
+}
+.card-back {
+  background: #ffe2b0;
+  transform: rotateY(180deg);
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  accent-color: #ff9f43;
+  transition: transform 0.3s;
+}
+input[type="checkbox"]:checked {
+  transform: scale(1.3) rotate(10deg);
+}
+
+.steps {
+  width: 300px;
+  margin: 2rem auto;
+  text-align: left;
+}
+.steps li {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+.steps li:nth-child(1){animation-delay:0.2s;}
+.steps li:nth-child(2){animation-delay:0.6s;}
+.steps li:nth-child(3){animation-delay:1s;}
+.steps li:nth-child(4){animation-delay:1.4s;}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  background: #ffd8b5;
+  padding: 1rem;
+  margin-top: 2rem;
+}
